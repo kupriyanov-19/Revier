@@ -1,6 +1,5 @@
 #include<iostream>
 #include<vector>
-using std::vector;
 typedef std::vector<std::vector<int64_t>> squareMatrix;
 
 const int64_t MODULO = 1000000000 + 7;
