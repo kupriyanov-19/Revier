@@ -31,7 +31,7 @@ int countSumAtFirstLine(const squareMatrix& matrix);
 
 void printNumber(std::ostream&, const int number);
 
-int countNumberOfPath(const std::vector<Edge>&, const int numberOfRooms, const int power);
+int countNumberOfPaths(const std::vector<Edge>&, const int numberOfRooms, const int power);
 
 int main() {
     std::ios_base::sync_with_stdio(false);
@@ -40,7 +40,7 @@ int main() {
     const int numberOfEdges = readNumber(std::cin);
     const int power = readNumber(std::cin);
     const std::vector<Edge> allEdges = readEdges(std::cin, numberOfEdges);
-    const int numberOfPath = countNumberOfPath(allEdges, numberOfRooms, power);
-    printNumber(std::cout, numberOfPath);
+    const int numberOfPaths = countNumberOfPaths(allEdges, numberOfRooms, power);
+    printNumber(std::cout, numberOfPaths);
     return 0;
 }
