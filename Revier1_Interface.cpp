@@ -1,4 +1,4 @@
-﻿#include<iostream>
+#include<iostream>
 #include<vector>
 typedef std::vector<std::vector<int64_t>> squareMatrix;
 
@@ -7,7 +7,7 @@ const int64_t MODULO = 1000000000 + 7;
 // Structure for representation edges
 struct Edge
 {
-  int edgeStart, edgeEnd;
+    int edgeStart, edgeEnd;
 };
 
 // Function for multiplication two matrices
@@ -31,16 +31,16 @@ int countSumAtFirstLine(const squareMatrix& matrix);
 
 void printNumber(std::ostream&, const int number);
 
+int countNumberOfPath(const std::vector<Edge>&, const int numberOfRooms, const int power);
+
 int main() {
-  std::ios_base::sync_with_stdio(false);
-  std::cin.tie(nullptr);
-  const int numberOfRooms = readNumber(std::cin);
-  const int numberOfEdges = readNumber(std::cin);
-  const int power = readNumber(std::cin);
-  const std::vector<Edge> allEdges = readEdges(std::cin, numberOfEdges);
-  const squareMatrix matrix = createAdjacencyMatrix(allEdges, numberOfRooms);
-  const squareMatrix transformedMatrix = getMatrixPower(matrix, power);
-  const int sumAtFirstLine = countSumAtFirstLine(transformedMatrix);
-  printNumber(std::cout, sumAtFirstLine);
-  return 0;
+    std::ios_base::sync_with_stdio(false);
+    std::cin.tie(nullptr);
+    const int numberOfRooms = readNumber(std::cin);
+    const int numberOfEdges = readNumber(std::cin);
+    const int power = readNumber(std::cin);
+    const std::vector<Edge> allEdges = readEdges(std::cin, numberOfEdges);
+    const int numberOfPath = countNumberOfPath(allEdges, numberOfRooms, power);
+    printNumber(std::cout, numberOfPath);
+    return 0;
 }
